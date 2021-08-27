@@ -3,13 +3,13 @@
 
 #set -x
 
-curl -O https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/MD5SUMS || { echo >&2 "Unable to acces url at the moment. Please try later."; exit 1; }
+curl -O https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/SHA512SUMS || { echo >&2 "Unable to acces url at the moment. Please try later."; exit 1; }
 
-iso=$( head -1 MD5SUMS | awk '{print $2}' )
+iso=$( head -1 SHA512SUMS | awk '{print $2}' )
 
 
 	function hashes {
-         head -1 MD5SUMS | md5sum -c
+         head -1 SHA512SUMS | shasum -c
          if [[ $? = 0 ]]
          then
                 echo "We are in fashion and file status ok!"

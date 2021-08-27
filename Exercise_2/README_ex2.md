@@ -6,11 +6,13 @@
 ## Description:
 
 Hellow, the entire program is based in this [url](https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/) and its links.
+
+**Update:** *Since Debian 11 has been released in August 14th 2021 in its stable version, this program uses the https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/SHA512SUMS url.*
  
 I would like to write a script wich can check and download current **Debian stable iso CD amd64 netinstall** version by itself 
 when a new release is effectively available.**Update:** *Well it is possible to modificate it to get whatever Debian iso you want, just adding options*
 
-**Update:** *Really important thing is to achieve MD5SUMS file and it first line content to get this program working.* 
+**Update:** *Really important thing is to achieve MD5SUMS/SHA512SUMS file and it first line content to get this program working.* 
 
 In order to do so I am using curl and wrote a makefile wich extracts the md5sum of specific version from official file through egrep,
 in order to compare it with existing CD iso file if any.
